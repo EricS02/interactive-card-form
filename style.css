@@ -1,0 +1,393 @@
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    position: relative;
+}
+
+.main-image {
+    width: 483px;
+    height: 100vh;
+    background-color: hsl(278, 68%, 11%);
+    position: relative;
+}
+
+.main-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Card Styles */
+.cards {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card-front {
+    position: absolute;
+    top: 187px;
+    left: 164px;
+    width: 447px;
+    height: 245px;
+    border-radius: 10px;
+    overflow: hidden;
+    color: white;
+    z-index: 2;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.front-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.card-logo {
+    position: absolute;
+    top: 28px;
+    left: 32px;
+    width: 84px;
+    height: 47px;
+    background-image: url('./images/card-logo.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.card-number {
+    position: absolute;
+    bottom: 80px;
+    left: 32px;
+    font-size: 28px;
+    letter-spacing: 3.5px;
+    width: 100%;
+}
+
+.card-name {
+    position: absolute;
+    bottom: 25px;
+    left: 32px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.card-expiry {
+    position: absolute;
+    bottom: 25px;
+    right: 32px;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.card-back {
+    position: absolute;
+    top: 468px;
+    left: 258px;
+    width: 447px;
+    height: 245px;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.back-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-cvc {
+    position: absolute;
+    top: 110px;
+    right: 60px;
+    color: white;
+    font-size: 14px;
+}
+
+/* Form Styles */
+.form-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 150px;
+}
+
+.card-form {
+    max-width: 400px;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 28px;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: hsl(278, 68%, 11%);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid hsl(270, 3%, 87%);
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+input:focus {
+    outline: none;
+    border-color: hsl(278, 94%, 30%);
+    border-width: 1px;
+}
+
+input::placeholder {
+    color: hsl(270, 3%, 87%);
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.date-group {
+    flex: 1;
+}
+
+.date-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+.date-inputs input {
+    width: 80px;
+}
+
+.cvc-group {
+    flex: 1;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: hsl(278, 68%, 11%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: hsl(278, 68%, 15%);
+}
+
+/* Add this to your existing CSS */
+
+.success-message {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.success-icon {
+  margin-bottom: 35px;
+}
+
+.success-icon img {
+  width: 80px;
+  height: 80px;
+}
+
+.success-message h2 {
+  color: hsl(278, 68%, 11%);
+  margin-bottom: 15px;
+  font-size: 28px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+}
+
+.success-message p {
+  color: hsl(279, 6%, 55%);
+  margin-bottom: 48px;
+  font-size: 18px;
+}
+
+.continue-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: hsl(278, 68%, 11%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.continue-btn:hover {
+  background-color: hsl(278, 68%, 15%);
+}
+
+/* Add a media query to maintain desktop layout */
+@media screen and (min-width: 1100px) {
+  body {
+    min-width: 1440px;
+  }
+  
+  .main-image {
+    width: 483px;
+  }
+  
+  .form-container {
+    padding-left: 150px;
+  }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 767px) {
+  body {
+    min-width: auto;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .main-image {
+    width: 100%;
+    height: 240px; /* Shorter height for mobile */
+  }
+  
+  .cards {
+    position: relative;
+    height: 0;
+  }
+  
+  .card-front {
+    top: 120px;
+    left: 20px;
+    width: 285px;
+    height: 157px;
+    z-index: 2;
+  }
+  
+  .card-back {
+    top: 30px;
+    left: auto;
+    right: 20px;
+    width: 285px;
+    height: 157px;
+  }
+  
+  .card-logo {
+    top: 18px;
+    left: 20px;
+    width: 54px;
+    height: 30px;
+  }
+  
+  .card-number {
+    bottom: 50px;
+    left: 20px;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  
+  .card-name {
+    bottom: 20px;
+    left: 20px;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  
+  .card-expiry {
+    bottom: 20px;
+    right: 20px;
+    font-size: 10px;
+  }
+  
+  .card-cvc {
+    top: 70px;
+    right: 35px;
+    font-size: 10px;
+  }
+  
+  .form-container {
+    padding: 90px 24px 45px;
+    align-items: flex-start;
+  }
+  
+  .card-form, 
+  .success-message {
+    margin-top: 48px;
+  }
+  
+  .form-row {
+    flex-wrap: wrap;
+  }
+  
+  .date-group {
+    flex: 0 0 50%;
+  }
+  
+  
+  
+  /* Success message mobile adjustments */
+  .success-message {
+    padding: 0 24px;
+  }
+  
+  .success-icon img {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .success-message h2 {
+    font-size: 24px;
+  }
+  
+  .success-message p {
+    font-size: 16px;
+    margin-bottom: 35px;
+  }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 375px) {
+  .card-front {
+    top: -100px;
+    width: 270px;
+    height: 150px;
+  }
+  
+  .card-back {
+    top: -200px;
+    width: 270px;
+    height: 150px;
+  }
+  
+  .card-number {
+    font-size: 16px;
+  }
+}
