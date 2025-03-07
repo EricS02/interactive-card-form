@@ -1,19 +1,24 @@
 * {
-    box-sizing: border-box; 
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'Space Grotesk', sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
 }
 
 body {
     min-height: 100vh;
-    overflow-x: hidden;
     display: flex;
     position: relative;
 }
 
 .main-image {
-    width: 483px;
+    width: 33%;
     height: 100vh;
     background-color: hsl(278, 68%, 11%);
     position: relative;
@@ -32,19 +37,21 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    pointer-events: none;
 }
 
 .card-front {
     position: absolute;
-    top: 187px;
-    left: 164px;
-    width: 447px;
-    height: 245px;
+    top: 10%;
+    left: 15%;
+    width: 300px;
+    height: 165px;
     border-radius: 10px;
     overflow: hidden;
     color: white;
     z-index: 2;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    pointer-events: none;
 }
 
 .front-card-img {
@@ -56,10 +63,10 @@ body {
 
 .card-logo {
     position: absolute;
-    top: 28px;
-    left: 32px;
-    width: 84px;
-    height: 47px;
+    top: 20px;
+    left: 20px;
+    width: 60px;
+    height: 33px;
     background-image: url('./images/card-logo.svg');
     background-size: contain;
     background-repeat: no-repeat;
@@ -67,40 +74,41 @@ body {
 
 .card-number {
     position: absolute;
-    bottom: 80px;
-    left: 32px;
-    font-size: 28px;
-    letter-spacing: 3.5px;
+    bottom: 55px;
+    left: 20px;
+    font-size: 18px;
+    letter-spacing: 2.5px;
     width: 100%;
 }
 
 .card-name {
     position: absolute;
-    bottom: 25px;
-    left: 32px;
-    font-size: 14px;
-    letter-spacing: 2px;
+    bottom: 20px;
+    left: 20px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
 }
 
 .card-expiry {
     position: absolute;
-    bottom: 25px;
-    right: 32px;
-    font-size: 14px;
-    letter-spacing: 2px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
 }
 
 .card-back {
     position: absolute;
-    top: 468px;
-    left: 258px;
-    width: 447px;
-    height: 245px;
+    top: 45%;
+    left: 20%;
+    width: 300px;
+    height: 165px;
     border-radius: 10px;
     overflow: hidden;
     z-index: 1;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    pointer-events: none;
 }
 
 .back-card-img {
@@ -111,24 +119,33 @@ body {
 
 .card-cvc {
     position: absolute;
-    top: 110px;
-    right: 60px;
+    top: 75px;
+    right: 40px;
     color: white;
-    font-size: 14px;
+    font-size: 10px;
 }
 
 /* Form Styles */
 .form-container {
+    position: absolute;
+    left: 65%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-left: 150px;
+    z-index: 100;
+    width: 50%;
+    padding: 5%;
 }
 
 .card-form {
     max-width: 400px;
     width: 100%;
+    z-index: 101;
+    position: relative;
 }
 
 .form-group {
@@ -334,6 +351,11 @@ button:hover {
   }
   
   .form-container {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
     padding: 90px 24px 45px;
     align-items: flex-start;
   }
@@ -390,4 +412,11 @@ button:hover {
   .card-number {
     font-size: 16px;
   }
+}
+
+/* Add these styles to ensure forms are clickable everywhere */
+
+/* Ensure inputs and buttons are clickable */
+input, button {
+  pointer-events: auto !important;
 }
